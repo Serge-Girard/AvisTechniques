@@ -5,6 +5,6 @@ Pour ceux qui ne seraient pas correcteurs sur le site de DVP (https://www.develo
 ou n'auraient pas les outils de rédaction nécessaires (KitOODvp) 
 Cet endroit vous permet d'avoir en "primeur" c'est à dire avant corrections (techniques et grammaticales) des tutoriels en cours de correction. 
 
-N'hesitez pas à émettre vos critiques. 
+N'hesitez pas à émettre vos critiques. (en ajoutant une "Issues")
 
 Les sujets seront détruits au fur et à mesure des publications  
