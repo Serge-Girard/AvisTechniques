@@ -1,0 +1,160 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'Test Diode EX'
+  ClientHeight = 527
+  ClientWidth = 358
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object DiodeEx1: TDiodeEx
+    Fill.Kind = Gradient
+    Fill.Gradient.Points = <
+      item
+        Color = claLightgray
+        Offset = 0.000000000000000000
+      end
+      item
+        Color = claAntiquewhite
+        Offset = 1.000000000000000000
+      end>
+    Fill.Gradient.Style = Radial
+    Position.X = 96.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 160.000000000000000000
+    Size.PlatformDefault = False
+    OnOff = False
+    ColorOn = claDarkgoldenrod
+    ColorOff = claLightgray
+    BrightColor = claAntiquewhite
+  end
+  object TrackBar1: TTrackBar
+    CanParentFocus = True
+    Orientation = Horizontal
+    Position.X = 96.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Value = 50.000000000000000000
+  end
+  object TrackBar2: TTrackBar
+    CanParentFocus = True
+    Orientation = Vertical
+    Position.X = 40.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 19.000000000000000000
+    Size.Height = 160.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Value = 50.000000000000000000
+  end
+  object CheckBox1: TCheckBox
+    Position.X = 112.000000000000000000
+    Position.Y = 232.000000000000000000
+    TabOrder = 3
+    Text = 'Actif'
+  end
+  object BindNavigator1: TBindNavigator
+    Position.X = 80.000000000000000000
+    Position.Y = 272.000000000000000000
+    Size.Width = 224.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    DataSource = PrototypeBindSource1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    xRadius = 4.000000000000000000
+    yRadius = 4.000000000000000000
+  end
+  object ColorListBox1: TColorListBox
+    Position.X = 96.000000000000000000
+    Position.Y = 328.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Color = claAntiquewhite
+    ItemIndex = 1
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 180.000000000000000000
+    Viewport.Height = 181.000000000000000000
+  end
+  object PrototypeBindSource1: TPrototypeBindSource
+    AutoActivate = True
+    AutoPost = False
+    FieldDefs = <
+      item
+        Name = 'Couleur'
+        FieldType = ftUInteger
+        Generator = 'AlphaColors'
+        ReadOnly = False
+      end
+      item
+        Name = 'Actif'
+        FieldType = ftBoolean
+        Generator = 'Booleans'
+        ReadOnly = False
+      end>
+    ScopeMappings = <>
+    Left = 304
+    Top = 16
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Liaisons rapides'
+      DataSource = PrototypeBindSource1
+      FieldName = 'Actif'
+      Control = CheckBox1
+      Track = True
+    end
+    object LinkPropertyToFieldColorOn: TLinkPropertyToField
+      Category = 'Liaisons rapides'
+      DataSource = PrototypeBindSource1
+      FieldName = 'Couleur'
+      Component = DiodeEx1
+      ComponentProperty = 'ColorOn'
+    end
+    object LinkControlToPropertyBrightColor: TLinkControlToProperty
+      Category = 'Liaisons rapides'
+      Control = ColorListBox1
+      Track = True
+      Component = DiodeEx1
+      ComponentProperty = 'BrightColor'
+    end
+    object LinkControlToPropertyBrightPositionX: TLinkControlToProperty
+      Category = 'Liaisons rapides'
+      Control = TrackBar1
+      Track = False
+      Component = DiodeEx1
+      ComponentProperty = 'BrightPosition.X'
+      CustomFormat = '%s / 100'
+      CustomParse = '%s * 100'
+    end
+    object LinkControlToPropertyBrightPositionY: TLinkControlToProperty
+      Category = 'Liaisons rapides'
+      Control = TrackBar2
+      Track = False
+      Component = DiodeEx1
+      ComponentProperty = 'BrightPosition.Y'
+      CustomFormat = '%s / 100'
+      CustomParse = '%s * 100'
+    end
+    object LinkPropertyToFieldOnOff: TLinkPropertyToField
+      Category = 'Liaisons rapides'
+      DataSource = PrototypeBindSource1
+      FieldName = 'Actif'
+      Component = DiodeEx1
+      ComponentProperty = 'OnOff'
+    end
+  end
+end
