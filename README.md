@@ -13,4 +13,4 @@ Des programmes à tester
 
 ![diode_testandroid](https://user-images.githubusercontent.com/51124639/162581341-14a9643e-06b1-4438-be86-5ed796cfb9db.PNG)
 
-On remarque un petit bogue en test Android, dans la diode un petit point blanc !  
+On remarque un petit bogue en test Delphi 11 Android, dans la diode un petit point blanc !  
